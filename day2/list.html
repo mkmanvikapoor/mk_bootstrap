@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <script defer src="js/index.js"></script>
+</head>
+
+
+<body onload="getData()">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Previous Job Type</th>
+                <th scope="col">Salary Expectation</th>
+                <th scope="col">Marital status</th>
+                <th scope="col">Job Location</th>
+                <th scope="col">Intro</th>
+            </tr>
+        </thead>
+        <tbody id="listData">
+
+
+        </tbody>
+    </table>
+
+</body>
+<script>
+    function getData() {
+
+        var table = '';
+        const listArray = JSON.parse(JSON.stringify(data));
+        for (var i = 0; i < listArray.length; i++) {
+
+            table += '<tr><th scope="row">' + (i + 1) + '</th><td>' + listArray[i]['name'] + '</td><td>' + listArray[i]['address'] + '</td><td>' + listArray[i]['phoneNumber'] + '</td><td>' + listArray[i]['previousJobType'] + '</td><td>' + listArray[i]['salaryExpectation'] + '</td><td>' + listArray[i]['maritalStatus'] + '</td><td>' + listArray[i]['jobLocation'] + '</td><td>' + listArray[i]['intro'] + '</td></tr>';
+        }
+        document.getElementById('listData').innerHTML = table;
+        // addRecord();
+
+    }
+    // function addRecord() {
+    //     var reportFile = new File([""], "js/list.js", { type: "application/javascript" });
+    //     var reportText = {
+    //         "name": "Manvi Kapoor",
+    //         "address": "delhi",
+    //         "phoneNumber": "999999999",
+    //         "previousJobType": "Internship",
+    //         "salaryExpectation": "30000 - 45000",
+    //         "maritalStatus": "Unmarried",
+    //         "jobLocation": "WFH",
+    //         "intro": "Axy vdf fdf fdsfsf dsf dsfdsfdsfds fdsfdsf"
+    //     }
+    //     if (reportFile.exists) {
+    //         alert('file already exists');
+    //         reportFile.open("a");
+    //         reportFile.write(reportText);
+    //         reportFile.close();
+    //     }
+    //     else {
+    //         var RCF_file = new File([""], "js/list.js", { type: "text/javascript" });
+    //         //RCF_file.open("w");
+    //         RCF_file.write(reportText);
+    //         RCF_file.close();
+    //     }
+    // }
+</script>
+
+</html>
